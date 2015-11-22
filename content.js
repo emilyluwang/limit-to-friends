@@ -4,6 +4,7 @@ chrome.runtime.onMessage.addListener(
 			for (var i = 0; i < $("a[href^='http']").length; i++) {
 				console.log($("a[href^='http']").eq(i).attr("href"));
 			}
+			console.log($("a"))
     	}
   	}
 );
