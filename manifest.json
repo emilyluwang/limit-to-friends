@@ -18,11 +18,7 @@
     }
   ],
 
-  "permissions": [
-    "activeTab",
-    "webRequest",
-    "webRequestBlocking",
-    "cookies",
-    "https://*/*"
-  ]
+  "background": {
+    "scripts": ["background.js"]
+  }
 }
