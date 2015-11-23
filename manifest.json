@@ -6,19 +6,29 @@
   "description": "Limit your content sharing to current friends only.",
 
   "browser_action": {
-  "default_icon": "icon.png"
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
   },
 
-  "content_scripts": [
+  "background": {
+    "page" : "background.html"
+  },
+  
+  "permissions" : [
+    "tabs",
+    "http://*.facebook.com/*",
+    "https://*.facebook.com/*"
+  ]
+  /**"content_scripts": [
     {
       "matches": [
       "<all_urls>"
       ],
-      "js": ["jquery-2.1.4.min.js","content.js"]
+      "js": ["jquery-2.1.4.min.js","popup.js", "content.js"]
     }
   ],
 
   "background": {
     "scripts": ["background.js"]
-  }
+  }**/
 }
