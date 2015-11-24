@@ -1,4 +1,7 @@
+console.log("Is this even running?");
+
 if (localStorage.accessToken) {
+	alert("in popup.js");
 	var graphUrl = "https://graph.facebook.com/me?" + localStorage.accessToken + "&callback=displayUser";
 	console.log(graphUrl);
  

@@ -13,22 +13,21 @@
   "background": {
     "page" : "background.html"
   },
-  
+
   "permissions" : [
     "tabs",
     "http://*.facebook.com/*",
     "https://*.facebook.com/*"
-  ]
-  /**"content_scripts": [
+  ],
+  
+"content_security_policy": "script-src 'self' https://connect.facebook.net; object-src 'self'",
+
+"content_scripts": [
     {
       "matches": [
       "<all_urls>"
       ],
-      "js": ["jquery-2.1.4.min.js","popup.js", "content.js"]
+      "js": ["jquery-2.1.4.min.js", "content.js"]
     }
-  ],
-
-  "background": {
-    "scripts": ["background.js"]
-  }**/
+  ]
 }
