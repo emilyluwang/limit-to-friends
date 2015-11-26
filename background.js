@@ -12,7 +12,6 @@ function onFacebookLogin() {
 				var params = tabs[i].url.split('#')[1];
 				access = params.split('&')[0]
 				localStorage.accessToken = access;
-				chrome.tabs.onUpdated.removeListener(onFacebookLogin);
 				alert("Now close this tab and click the cat again to confirm your post!");
 				return;
 			}
@@ -21,7 +20,7 @@ function onFacebookLogin() {
 }
 
 // Close the tab after redirection.
-function onReloaded() {
+function onReloaded(request) {
 	if (request.farewell == "close_tab") {
 		chrome.tabs.getAllInWindow(null, function(tabs) {
 			for (var i = 0; i < tabs.length; i++) {
