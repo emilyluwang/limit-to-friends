@@ -7,12 +7,11 @@ document.getElementById("status_button").addEventListener("click", saveStatus);
 // Save the entered status into local storage
 function saveStatus() {
 	localStorage.newStatus = document.getElementById("status").value;
-	localStorage.shouldUpdate = true;
 }
 
 // If the status is new and the access token is valid, request info from the FB graph api
-if (localStorage.accessToken && localStorage.shouldUpdate) {
-
+if (localStorage.accessToken != null) {
+	chrome.runtime.sendMessage({farewell: "close_tab"});
 	// Prepare FB graph api request.
 	// NOTE: Because of the updated graph api settings, the only friend ids accessible will be limited
 	// Only friends using the app will have their ids appear in this list.
@@ -61,7 +60,7 @@ if (localStorage.accessToken && localStorage.shouldUpdate) {
     	sharingField.setAttribute("value", privacyObject);
     	form.appendChild(sharingField);
 
-    	localStorage.shouldUpdate = false;
+    	localStorage.accessToken = null;
     	form.submit();
 		}
 }
