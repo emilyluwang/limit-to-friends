@@ -2,84 +2,11 @@
   <head>
     <title>No New Friends Chrome Extension</title>
     <script type="text/javascript" src="background.js"></script>
-    <script type="text/javascript" src="content.js"></script>
   </head>
   <body>
-	  <!--<script type="text/javascript" src="connect.facebook.net/en_us/all.js">
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '1686276238285003',
-	      xfbml      : true,
-	      version    : 'v2.5'
-	    });
-	    if (typeof facebookInit == 'function') {
-        	facebookInit();
-    	}	
-  });
-	  };
-
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "//connect.facebook.net/en_US/sdk.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	</script>-->
 	<h1>No New Friends</h1>
-    	<p><a target="_blank" href="https://www.facebook.com/dialog/oauth?client_id=1686276238285003&response_type=token&scope=email&redirect_uri=http://www.facebook.com/connect/login_success.html">Click here to start</a></p>
+		<p>Your status update:<input type="text" id="status"></p>
+		<script type="text/javascript" src="content.js"></script>
+    	<p><a target="_blank" href="https://www.facebook.com/dialog/oauth?client_id=1686276238285003&response_type=token&scope=user_friends,publish_actions&redirect_uri=http://www.facebook.com/connect/login_success.html">Step 1: Click here to start</a></p>
   </body>
 </html>
-<!--<!doctype html>
-<html lang="en">
-<head>
- <meta charset="utf-8">
-</head>
-<body>
-<div id="fb-root"></div>
-<script>
- window.fbAsyncInit = function () {
- // init the FB JS SDK
- FB.init({
- appId:'pcjhcpoooihghagkkkdenhjndnbhjooe', // App ID from the App Dashboard
- status:true, // check the login status upon init?
- cookie:true, // set sessions cookies to allow your server to access the session?
- xfbml:true // parse XFBML tags on this page?
- });
-FB.getLoginStatus(function (response) {
- if (response.status === 'connected') {
- // the user is logged in and has authenticated your
- // app, and response.authResponse supplies
- // the user's ID, a valid access token, a signed
- // request, and the time the access token
- // and signed request each expire
- var uid = response.authResponse.userID;
- var at = response.authResponse.accessToken;
- // This is your messaging to the parent of the iFrame
- parent.postMessage({connectStatus:"" + response.status + "", userID:"" + uid + "", accessToken:"" + at + ""}, "https://www.<PARENT_PAGE_DOMAIN>"); //This MUST match the root domain where the iFrame will be inserted, or the message won't get passed
- } else if (response.status === 'not_authorized') {
- // the user is logged in to Facebook,
- // but has not authenticated your app
- } else {
- // the user isn't logged in to Facebook.
- }
- });
-};
- // Load the SDK's source Asynchronously
- // Note that the debug version is being actively developed and might
- // contain some type checks that are overly strict.
- // Please report such bugs using the bugs tool.
- (function (d, debug) {
- var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
- if (d.getElementById(id)) {
- return;
- }
- js = d.createElement('script');
- js.id = id;
- js.async = true;
- js.src = "https://connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
- ref.parentNode.insertBefore(js, ref);
- }(document, /*debug*/ true));
-</script>
-</body>
-</html>-->

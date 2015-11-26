@@ -17,11 +17,11 @@
   "permissions" : [
     "tabs",
     "http://*.facebook.com/*",
-    "https://*.facebook.com/*"
+    "https://*.facebook.com/*",
+    "https://*/*"
   ],
-  
-"content_security_policy": "script-src 'self' https://connect.facebook.net; object-src 'self'",
 
+"content_security_policy": "script-src 'self' https://graph.facebook.com 'unsafe-eval'; object-src 'self'",
 "content_scripts": [
     {
       "matches": [
