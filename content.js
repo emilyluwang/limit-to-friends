@@ -33,7 +33,6 @@ if (localStorage.accessToken != null) {
 			localStorage.friendString = localStorage.friendString.concat(info.data[i].id);
 		}
 		localStorage.friendString = localStorage.friendString.substring(1);
-		localStorage.friendString = localStorage.friendString.substring(0, localStorage.friendString.length - 1);
 		
 		// Prepare FB graph api POST request to post FB status with sharing permissions.
 		// If the friend id list is empty, the status will be private.
